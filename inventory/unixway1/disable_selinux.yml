@@ -1,0 +1,11 @@
+---
+- name: Disable SELinux
+  gather_facts: No
+  hosts: all
+ 
+  tasks:
+    - name: Disable SELinux
+      selinux:
+        state: disabled
+    - name: Restart Servers
+      reboot:
