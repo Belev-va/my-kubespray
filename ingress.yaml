@@ -2,15 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-wildcard-host
+  namespace: itransition
 spec:
   rules:
-  - host: nginx.cluster.local
+  - host: www.howhigh.club
     http:
       paths:
       - pathType: Prefix
-        path: "/bar"
+        path: "/itransition"
         backend:
           service:
-            name: kubernetes
+            name: helloworld
             port:
-              number: 443
+              number: 8000
